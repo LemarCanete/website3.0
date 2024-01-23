@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ReactCardFlip from 'react-card-flip'; // Assuming you're using react-card-flip
 
 const Card = ({title, description, subTitle, technologies, image, date, demo}) => {
@@ -8,19 +8,11 @@ const Card = ({title, description, subTitle, technologies, image, date, demo}) =
     const handleHover = () => {
         setIsFlipped((prevIsFlipped) => !prevIsFlipped);
     };
-    useEffect(() => {
-        const handleDemoClick = () => {
-          if (typeof window !== 'undefined') {
+    const handleDemoClick = () => {
+        if (typeof window !== 'undefined') {
             window.open(demo, '_blank');
-          }
-        };
-    
-        document.getElementById('demoId').addEventListener('click', handleDemoClick);
-    
-        return () => {
-          document.getElementById('demoId').removeEventListener('click', handleDemoClick);
-        };
-    }, [demo]);
+        }
+      };
       
     return (
         <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical" >
@@ -36,7 +28,7 @@ const Card = ({title, description, subTitle, technologies, image, date, demo}) =
             </div>
 
             <div className='bg-white text-black rounded-lg h-72 lg:w-96 w-full flex flex-col justify-center align-center text-center p-3' 
-                onMouseLeave={handleHover} id='demoId'>
+                onMouseLeave={handleHover} onClick={handleDemoClick}>
                 <p className="font-bold">{title} </p>
                 <p className="">{subTitle}</p>
                 <small className='text-justify mt-8'>
