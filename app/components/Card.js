@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactCardFlip from 'react-card-flip'; // Assuming you're using react-card-flip
 
 const Card = ({title, description, subTitle, technologies, image, date, demo}) => {
@@ -8,13 +8,19 @@ const Card = ({title, description, subTitle, technologies, image, date, demo}) =
     const handleHover = () => {
         setIsFlipped((prevIsFlipped) => !prevIsFlipped);
     };
-    const handleDemoClick = () => {
-        // Check if window is defined before using it
-        if (typeof window !== 'undefined') {
-          // Use window.open to open the external link (demo) in a new tab
-          window.open(demo, '_blank');
-        }
-      };
+    useEffect(() => {
+        const handleDemoClick = () => {
+          if (typeof window !== 'undefined') {
+            window.open(demo, '_blank');
+          }
+        };
+    
+        document.getElementById('demoId').addEventListener('click', handleDemoClick);
+    
+        return () => {
+          document.getElementById('demoId').removeEventListener('click', handleDemoClick);
+        };
+    }, [demo]);
       
     return (
         <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical" >
@@ -30,7 +36,7 @@ const Card = ({title, description, subTitle, technologies, image, date, demo}) =
             </div>
 
             <div className='bg-white text-black rounded-lg h-72 lg:w-96 w-full flex flex-col justify-center align-center text-center p-3' 
-                onMouseLeave={handleHover} onClick={handleDemoClick}>
+                onMouseLeave={handleHover} id='demoId'>
                 <p className="font-bold">{title} </p>
                 <p className="">{subTitle}</p>
                 <small className='text-justify mt-8'>
