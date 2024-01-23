@@ -8,11 +8,6 @@ const Card = ({title, description, subTitle, technologies, image, date, demo}) =
     const handleHover = () => {
         setIsFlipped((prevIsFlipped) => !prevIsFlipped);
     };
-    const handleDemoClick = () => {
-        if (typeof window !== 'undefined') {
-            window.open(demo, '_blank');
-        }
-      };
       
     return (
         <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical" >
@@ -27,14 +22,14 @@ const Card = ({title, description, subTitle, technologies, image, date, demo}) =
                 </div>
             </div>
 
-            <div className='bg-white text-black rounded-lg h-72 lg:w-96 w-full flex flex-col justify-center align-center text-center p-3' 
-                onMouseLeave={handleHover} onClick={handleDemoClick}>
+            <a className='bg-white text-black rounded-lg h-72 lg:w-96 w-full flex flex-col justify-center align-center text-center p-3' 
+                onMouseLeave={handleHover} href={demo} target='_blank'>
                 <p className="font-bold">{title} </p>
                 <p className="">{subTitle}</p>
                 <small className='text-justify mt-8'>
                     {description}
                 </small>
-            </div>
+            </a>
         </ReactCardFlip>
     );
 };
