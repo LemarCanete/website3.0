@@ -8,7 +8,14 @@ const Card = ({title, description, subTitle, technologies, image, date, demo}) =
     const handleHover = () => {
         setIsFlipped((prevIsFlipped) => !prevIsFlipped);
     };
-
+    const handleDemoClick = () => {
+        // Check if window is defined before using it
+        if (typeof window !== 'undefined') {
+          // Use window.open to open the external link (demo) in a new tab
+          window.open(demo, '_blank');
+        }
+      };
+      
     return (
         <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical" >
             <div className='bg-white text-black rounded-lg lg:h-72 h-full lg:w-96 w-full' onMouseEnter={handleHover} >
@@ -23,7 +30,7 @@ const Card = ({title, description, subTitle, technologies, image, date, demo}) =
             </div>
 
             <div className='bg-white text-black rounded-lg h-72 lg:w-96 w-full flex flex-col justify-center align-center text-center p-3' 
-                onMouseLeave={handleHover} onClick={()=> window.open(demo, '_blank')}>
+                onMouseLeave={handleHover} onClick={handleDemoClick}>
                 <p className="font-bold">{title} </p>
                 <p className="">{subTitle}</p>
                 <small className='text-justify mt-8'>
