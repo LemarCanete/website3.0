@@ -1,8 +1,17 @@
 'use client'
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Chrono } from 'react-chrono';
 
 const Profile = () => {
+    const [chronoLoaded, setChronoLoaded] = useState(false);
+    useEffect(() => {
+        import('react-chrono').then((module) => {
+          setChronoLoaded(true);
+        });
+    }, []);
+    if (!chronoLoaded) {
+        return null; // Render nothing while react-chrono is loading
+    }
     const items = [{
         title: "2021 - CURRENT",
         cardTitle: "College",
