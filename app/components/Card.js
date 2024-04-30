@@ -11,14 +11,12 @@ const Card = ({title, description, subTitle, technologies, image, date, demo}) =
       
     return (
         <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical" >
-            <div className='bg-white text-black rounded-lg lg:h-72 h-full lg:w-96 w-full' onMouseEnter={handleHover} >
+            <div className='bg-white text-black lg:h-72 h-full lg:w-96 w-full' onMouseEnter={handleHover} >
                 <img src={image} alt="" className='rounded-t-lg h-52 w-full'/>
                 <div className="p-2 text-sm">
                     <p className="block"><span className='font-bold'>Date Created: </span>{date}</p>
                     <p className="inline"><span className='font-bold'>Stacks Used: </span> </p>
-                    {technologies.map((tech, i) => {
-                        return <p key={i} className='inline'>{tech}, </p>
-                    })}
+                    <p className='inline'>{technologies.join(', ')}</p>
                 </div>
             </div>
 

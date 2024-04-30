@@ -10,7 +10,7 @@ const Projects = () => {
                 title="TaskTrove Project Management System" 
                 subTitle="Project Mangement System" 
                 description="TaskTrove is a user-friendly project management system, facilitating seamless task creation, assignment, and tracking for teams. " 
-                technologies={["React JS", "Next JS", "Express", "Node JS", "MongoDB", "axios", "Docker", "MVC", "mongoose", "TypeScript"]}
+                technologies={["React JS", "Next JS", "Express", "Node JS", "MongoDB", "axios", "Docker", "MVC", "mongoose", "TypeScript", "Bootstrap"]}
                 demo="https://tasktrove-react.vercel.app/"
                 image="/projects/taskTrove.png"
                 date="June 2023"
@@ -43,9 +43,20 @@ const Projects = () => {
                 image="/projects/Restaurant.png"
                 date="September 2023"
             />
+           <Card 
+                title="OneCIT System" 
+                subTitle="School Management App" 
+                description="OneCIT is a comprehensive school management app for students, teachers, and staff. It includes features such as appointments, document inquiries, and online library access. Users can chat, access a calendar of events, search the directory, and view announcements. Other features include forums, feedback, task management, career listings, and class tracking." 
+                technologies={["React JS", "Next JS", "Express", "Node JS", "Firebase", "axios", "Tailwind CSS", "cherrio"]}
+                demo="https://github.com/LemarCanete/OneCITSystem.git"
+                image="/projects/onecit.png"
+                date="January 2024"
+            />
+
         </div>
     </div>
   )
 }
 
 export default Projects
+

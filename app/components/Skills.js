@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaReact } from "react-icons/fa";
-import { SiNextdotjs, SiMongodb, SiExpress, SiNodedotjs, SiGithub, SiCsharp, SiHtml5, SiCss3, SiDocker, SiWordpress, SiTailwindcss, SiBootstrap, SiMicrosoftaccess, SiVisualstudiocode, SiVisualstudio, SiPostman  } from "react-icons/si";
+import { SiNextdotjs, SiMongodb, SiExpress, SiNodedotjs, SiGithub, SiCsharp, SiHtml5, SiCss3, SiDocker, SiWordpress, SiTailwindcss, SiBootstrap, SiMicrosoftaccess, SiVisualstudiocode, SiVisualstudio, SiPostman, SiFirebase, SiRedux  } from "react-icons/si";
 import {SiJavascript, SiJquery, SiSocketdotio, SiPhp, SiMicrosoftexcel, SiFigma, SiCanva, SiVirtualbox } from "react-icons/si"
 const Skill = ({icon, name}) =>{
     return (
@@ -41,6 +41,8 @@ const Skills = () => {
             <Skill icon={<SiVisualstudiocode className='text-5xl text-center w-full' color='#08aef3'/>} name="Visual Studio Code"/>
             <Skill icon={<SiVisualstudio className='text-5xl text-center w-full' color='#b27bdd'/>} name="Visual Studio"/>
             <Skill icon={<SiPostman className='text-5xl text-center w-full' color='#ff713f'/>} name="Postman"/>
+            <Skill icon={<SiFirebase className='text-5xl text-center w-full' color='#ffcb2d'/>} name="Firebase"/>
+            <Skill icon={<SiRedux className='text-5xl text-center w-full' color='#7946b4'/>} name="Redux" />
         </div>
     </div>
   )
