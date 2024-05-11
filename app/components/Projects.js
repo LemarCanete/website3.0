@@ -48,7 +48,7 @@ const Projects = () => {
                 subTitle="School Management App" 
                 description="OneCIT is a comprehensive school management app for students, teachers, and staff. It includes features such as appointments, document inquiries, and online library access. Users can chat, access a calendar of events, search the directory, and view announcements. Other features include forums, feedback, task management, career listings, and class tracking." 
                 technologies={["React JS", "Next JS", "Express", "Node JS", "Firebase", "axios", "Tailwind CSS", "cherrio"]}
-                demo="https://github.com/LemarCanete/OneCITSystem.git"
+                demo="https://onecit.vercel.app/"
                 image="/projects/onecit.png"
                 date="January 2024"
             />
