@@ -52,6 +52,15 @@ const Projects = () => {
                 image="/projects/onecit.png"
                 date="January 2024"
             />
+            <Card 
+                title="CrowdFund" 
+                subTitle="Fund Rasing System" 
+                description="Crowdfund is an application for individuals and organizations to raise funds for various projects and causes through public contributions." 
+                technologies={["React JS", "Next JS", "Firebase", "Tailwind CSS", "Shadcn"]}
+                demo="https://crowdfund-nu-sand.vercel.app/"
+                image="/projects/CrowdFund.png"
+                date="July 2024"
+            />
 
         </div>
     </div>
